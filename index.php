@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     exit($_GET['challenge']);
 }
 
+$data = json_decode($_POST); // request body
+
 header('Content-Type: application/json');
 
 $data = array(
@@ -25,5 +27,3 @@ $data = array(
 );
 
 echo json_encode($data);
-
-?>
