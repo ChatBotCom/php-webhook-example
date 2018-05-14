@@ -13,7 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     exit($_GET['challenge']);
 }
 
-$data = json_decode($_POST); // request body
+// https://stackoverflow.com/a/8945912/2378095
+// access the entity body of a POST request
+$data = json_decode(file_get_contents('php://input')); // request body
 
 header('Content-Type: application/json');
 
