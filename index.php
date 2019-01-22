@@ -19,10 +19,12 @@ $data = json_decode(file_get_contents('php://input'));
 header('Content-Type: application/json');
 
 $response = array(
+    // return custom attributes object
     'parameters' => array(
         'name' => 'John',
         'surname' => 'Example'
     ),
+    // return responses
     'responses' => array(
         array(
             'type' => 'text',
